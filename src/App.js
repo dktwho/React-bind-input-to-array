@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [notes, setNotes] = useState([1,2,3])
+
+  function getSum(arr) {
+  let sum = 0;
+
+  for (const elem of arr) {
+    sum += elem
+  }
+  return sum
+  }
+
+  function changeHandler(index, event) {
+    setNotes([...notes.slice(0, index), +event.target.value, ...notes.slice(index + 1)])
+  }
+  
+ 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input value={notes[0]} onChange={(event) => changeHandler(0, event)}/> <br />
+      <input value={notes[1]} onChange={(event) => changeHandler(1, event)} /> <br />
+      <input value={notes[2]} onChange={(event) => changeHandler(2, event)}/> <br />
+      {getSum(notes)}
+      
+
     </div>
   );
 }

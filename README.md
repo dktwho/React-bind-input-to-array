@@ -1,3 +1,8 @@
+# Содержание
+
+1. Привязка инпутов к массиву, функция суммирующая элементы массивы попадающие из инпутов
+2. Привязка инпутов к массиву, функция считает среднее арифметическое элементов массива, попадающие из инпутов
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
